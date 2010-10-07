@@ -34,7 +34,7 @@ module Simplabs
       #   if the language is not supported.
       #
       def highlight
-        command = "pygmentize -f html -O linenos=inline -l #{@language}"
+        command = "pygmentize -f html -O linenos=table -l #{@language}"
         IO.popen(command, mode = 'r+') do |pygments|
           pygments << @code
           pygments.close_write
